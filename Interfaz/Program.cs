@@ -12,13 +12,11 @@ namespace Interfaz
                 "\n1. Chiwawa" +
                 "\n2. Labrador" +
                 "\n3. Husky");
-
             string? o = Console.ReadLine();
-
-            if (o != null && int.TryParse(o, out int opcion))
+            if (o != null && int.TryParse(o, out int opcion) && opcion > 0 && opcion < 3)
             {
                 Context contexto = new(FactoryContext.GetPerro(opcion));
-                contexto.Pasear();
+                contexto.Pasear();     
             }
             else
             {
